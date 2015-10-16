@@ -33,6 +33,8 @@ file: introduction.txt
 
 The program begins by asking the user for a window height.  This is the number of lines that will be displayed as each "page".  The displayed lines are numbered starting at 1 for the first line of the file.  If the number of lines on the last page is smaller than the window height, the rest of the window is filled with unnumbered empty lines. 
 
+The program then asks for the maximum line length in the display, if the line in the file's length is longer than the maximum file then the extra words are placed on the next line.
+
 Each page is displayed between two lines of 50 dashes.  The name of the file is printed above the first line of dashes.  Below the second line of dashes, a menu of commands is displayed.  Below that menu, the prompt "choice:" is displayed.  The user types the first letter of a command, the command executes and everything is redisplayed.  Some commands prompt the user for more information.  
 
 Here is a description of the various commands:
