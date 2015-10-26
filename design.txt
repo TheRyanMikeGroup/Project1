@@ -57,3 +57,20 @@ o void set_window_height(int h)
 
 Implementation:  Stores each line of text as a string and all the lines in a vector.  Maintains the index of the line currently displayed at the top of the window, as well as the name of the file and the window height.
              
+COMPONENT: class Anchor
+
+An anchor contains the title and the file name of a hyperlink in a file. 
+
+Public methods:
+
+o Anchor()
+
+	Creates a default anchor with no text and file name
+	
+o Anchor(const std::string & text, const std::string & file)
+
+	Creates a file with the elements passed
+	
+o std::string text() const
+
+	returns the test field of the anchor

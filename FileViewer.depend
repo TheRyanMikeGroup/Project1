@@ -56,7 +56,7 @@
 	<vector>
 	<string>
 
-1444792992 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\fileviewer.cpp
+1445021212 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\fileviewer.cpp
 	"FileViewer.h"
 	<iostream>
 	<string>
@@ -65,6 +65,15 @@
 	<string>
 	"Buffer.h"
 
-1444792993 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\test.cpp
+1445457018 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\test.cpp
 	"FileViewer.h"
+
+1445456954 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\anchor.cpp
+	"Anchor.h"
+	<iostream>
+
+1445898703 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\anchor.h
+	<string>
+	<istream>
+	<ostream>
 

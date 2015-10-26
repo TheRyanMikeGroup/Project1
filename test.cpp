@@ -4,10 +4,13 @@
 
 #include "FileViewer.h"
 
-int main()
-{
-    FileViewer viewer;
-    viewer.run();
+//int main()
+//{
 
-    return 0;
-}
+
+
+    //FileViewer viewer;
+    //viewer.run();
+
+    //return 0;
+//}
