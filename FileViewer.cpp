@@ -44,6 +44,7 @@ void FileViewer::run()
     cout << '\n';
 
     buffer.set_window_height(window_height);
+    buffer.set_line_length(line_length);
 
     bool done = false;
     while (!done) {

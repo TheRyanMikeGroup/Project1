@@ -2,6 +2,8 @@
 
 #include <vector>
 #include <string>
+#include <fstream>
+#include <istream>
 #include "Anchor.h"
 
 class Buffer
@@ -13,15 +15,18 @@ public:
     void move_to_previous_page();
     bool open(const std::string & file_name);
     void set_window_height(int h) { window_height = h; }
+    void set_line_length(int l) { line_length = l; }
     void add(const std::string & word);
-    void add(const Anchor & anchor);
+    void add(const std::string & file, const std::string & text);
 
 
 private:
+    void parseAnchor(std::ifstream & input);
     std::vector<std::string> v_lines;
     int ix_top_line = 0;
     std::string file_name;
     int window_height;
+    int line_length;
 };
 
 inline void Buffer::move_to_next_page()
@@ -35,12 +40,16 @@ inline void Buffer::move_to_previous_page()
     if (ix_top_line > 0) ix_top_line -= window_height;
 }
 
-inline void add(const std::string & word)
+inline void Buffer::add(const std::string & word)
 {
-    v_lines.push(word);
+    v_lines.push_back(word);
 }
 
-inline void add(const Anchor & anchor)
+inline void Buffer::add(const std::string & file, const std::string & text)
 {
-    add(anchor.to_string() + '[' + 2 + ']');
+    std::string print_text = "<<" + text + ">>";
+    print_text += "[";
+    print_text += 2;
+    print_text += "]";
+    add(print_text);
 }

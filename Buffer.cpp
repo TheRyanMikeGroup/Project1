@@ -8,8 +8,7 @@
 using std::cout;
 #include <string>
 using std::string;
-#include <sstream>
-using std::stringstream;
+
 
 void Buffer::display() const
 {
@@ -33,15 +32,14 @@ bool Buffer::open(const string & new_file_name)
     string word;
     while (!file.eof())
     {
-       if(file.peek() == '<a')
+       file >> word;
+       if(word == "<a")
        {
-           Anchor anchor();
-           file >> anchor;
-           add(anchor);
+           parseAnchor(file);
+
        }
        else
        {
-            file >> word;
             add(word);
        }
     }
@@ -49,4 +47,16 @@ bool Buffer::open(const string & new_file_name)
     file_name = new_file_name;
     ix_top_line = 0;
     return true;
+}
+
+void Buffer::parseAnchor(std::ifstream & input)
+{
+    std::string text;
+    std::string file;
+
+    input >> file;
+    input >> text;
+    text = text.substr(0, text.size() - 1);
+
+    add(file, text);
 }
