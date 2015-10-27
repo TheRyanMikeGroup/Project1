@@ -21,7 +21,6 @@ public:
     void add(const std::string & file, const std::string & text);
 
 
-    std::vector<std::string> link_files;
 
 private:
     void parseAnchor(std::ifstream & input);
@@ -30,6 +29,7 @@ private:
     std::string file_name;
     int window_height;
     int line_length;
+    std::vector<std::string> link_files;
 
 };
 
