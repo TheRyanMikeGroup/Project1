@@ -21,6 +21,8 @@ public:
     void add(const std::string & file, const std::string & text);
 
 
+    std::vector<std::string> link_files;
+
 private:
     void parseAnchor(std::ifstream & input);
     std::vector<std::string> v_lines;
@@ -28,6 +30,7 @@ private:
     std::string file_name;
     int window_height;
     int line_length;
+
 };
 
 inline void Buffer::move_to_next_page()
