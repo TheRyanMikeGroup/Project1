@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <string>
+#include "Anchor.h"
 
 class Buffer
 {
@@ -12,6 +13,9 @@ public:
     void move_to_previous_page();
     bool open(const std::string & file_name);
     void set_window_height(int h) { window_height = h; }
+    void add(const std::string & word);
+    void add(const Anchor & anchor);
+
 
 private:
     std::vector<std::string> v_lines;
@@ -31,3 +35,12 @@ inline void Buffer::move_to_previous_page()
     if (ix_top_line > 0) ix_top_line -= window_height;
 }
 
+inline void add(const std::string & word)
+{
+    v_lines.push(word);
+}
+
+inline void add(const Anchor & anchor)
+{
+    add(anchor.to_string() + '[' + 2 + ']');
+}

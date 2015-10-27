@@ -52,9 +52,10 @@
 	<iostream>
 	<string>
 
-1444792992 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.h
+1445904461 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.h
 	<vector>
 	<string>
+	"Anchor.h"
 
 1445021212 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\fileviewer.cpp
 	"FileViewer.h"

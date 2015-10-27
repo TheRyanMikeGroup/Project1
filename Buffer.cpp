@@ -8,6 +8,8 @@
 using std::cout;
 #include <string>
 using std::string;
+#include <sstream>
+using std::stringstream;
 
 void Buffer::display() const
 {
@@ -28,8 +30,21 @@ bool Buffer::open(const string & new_file_name)
     // Note: the vector is cleared only after we know the file
     // opened successfully.
 
-    string line;
-    while (getline(file, line)) v_lines.push_back(line);
+    string word;
+    while (!file.eof())
+    {
+       if(file.peek() == '<a')
+       {
+           Anchor anchor();
+           file >> anchor;
+           add(anchor);
+       }
+       else
+       {
+            file >> word;
+            add(word);
+       }
+    }
 
     file_name = new_file_name;
     ix_top_line = 0;

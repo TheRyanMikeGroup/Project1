@@ -18,6 +18,8 @@ public:
     std::string text() const {return text_;}
     std::string file() const {return file_;}
 
+    std::string to_string() const {return "<<" << anchor.text() << ">>"; }
+
 private:
     std::string text_;
     std::string file_;
@@ -26,7 +28,7 @@ private:
 
 inline std::ostream & operator<<(std::ostream & output, const Anchor & anchor)
 {
-    output << "<<" << anchor.text() << ">>";
+    output << to_string();
 }
 
 inline std::istream & operator>>(std::istream & input, Anchor & anchor)
