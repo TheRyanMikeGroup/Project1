@@ -45,21 +45,22 @@
 1392677212 source:c:\users\alexis\documents\cs142\cours\fileviewer\test.cpp
 	"FileViewer.h"
 
-1445912734 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.cpp
+1445913931 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.cpp
 	"Buffer.h"
 	<fstream>
 	<iomanip>
 	<iostream>
 	<string>
 
-1445912935 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.h
+1445914178 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.h
 	<vector>
 	<string>
 	<fstream>
 	<istream>
+	<iostream>
 	"Anchor.h"
 
-1445021212 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\fileviewer.cpp
+1445912823 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\fileviewer.cpp
 	"FileViewer.h"
 	<iostream>
 	<string>
