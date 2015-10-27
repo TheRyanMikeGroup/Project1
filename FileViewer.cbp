@@ -10,7 +10,8 @@
 				<Option output="FileViewer" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../Project1" />
 				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option compiler="clang" />
+				<Option projectLinkerOptionsRelation="0" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>

@@ -2,6 +2,8 @@
 
 #include <vector>
 #include <string>
+#include "Anchor.h"
+
 
 class Buffer
 {
@@ -13,11 +15,15 @@ public:
     bool open(const std::string & file_name);
     void set_window_height(int h) { window_height = h; }
 
+    std::vector<std::string> link_files;
+
 private:
     std::vector<std::string> v_lines;
     int ix_top_line = 0;
     std::string file_name;
     int window_height;
+
+
 };
 
 inline void Buffer::move_to_next_page()

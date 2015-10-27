@@ -4,7 +4,7 @@
 #include <string>
 #include <istream>
 #include <ostream>
-
+//#include "Buffer.h"
 
 class Anchor
 {

@@ -78,6 +78,15 @@ void FileViewer::run()
                 done = true;
                 break;
             }
+
+            case 'g': {
+                cout << "link number: ";
+                int link_num = 999;
+                cin >> link_num;
+                if(!buffer.open(buffer.link_files[link_num]))
+                   error_message = "Could not open " + buffer.link_files[link_num];
+                break;
+            }
         };
         cout << endl;
     } // while
