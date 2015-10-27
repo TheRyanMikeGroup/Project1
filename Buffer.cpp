@@ -30,9 +30,9 @@ bool Buffer::open(const string & new_file_name)
     // opened successfully.
 
     string word;
+    file >> word;
     while (!file.eof())
     {
-       file >> word;
        if(word == "<a")
        {
            parseAnchor(file);
@@ -42,6 +42,7 @@ bool Buffer::open(const string & new_file_name)
        {
             add(word);
        }
+       file >> word;
     }
 
     file_name = new_file_name;
