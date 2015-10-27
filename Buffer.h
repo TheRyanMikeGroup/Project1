@@ -46,7 +46,6 @@ inline void Buffer::move_to_previous_page()
 
 inline void Buffer::add(const std::string & word)
 {
-    std::cout << "adding: " << word;
     if(v_lines.size() == 0 || v_lines[v_lines.size()-1].size() + word.size()  + 1 > line_length)
         v_lines.push_back(word);
     else

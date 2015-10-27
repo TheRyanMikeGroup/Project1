@@ -28,7 +28,7 @@ void FileViewer::display()
     cout << long_separator << endl;
     buffer.display();
     cout << long_separator << endl;
-    cout << "  next  previous  open  quit\n";
+    cout << " go next  previous  open  quit\n";
     cout << short_separator << endl;
 }
 
