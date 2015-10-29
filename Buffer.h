@@ -13,27 +13,32 @@ class Buffer
 {
 public:
     void display() const;
-    const std::string & get_file_name() const { return file_name; }
     void move_to_next_page();
     void move_to_previous_page();
-    bool open(const std::string & file_name);
     void set_window_height(int h) { window_height = h; }
     void set_line_length(int l) { line_length = l; }
     void add(const std::string & word);
     void add(const std::string & file, const std::string & text);
-    bool open(const int &index);
     void break_paragraph();
+
+    const std::string & get_file_name() const { return file_name; }
+
+    bool open(const std::string & file_name);
+    bool open(const int &index);
+
 
 
 private:
-    void parse_anchor(std::ifstream & input);
     std::vector<std::string> v_lines;
-    int ix_top_line = 0;
-    std::string file_name;
-    int window_height;
-    int line_length;
     std::vector<std::string> link_files;
 
+    std::string file_name;
+
+    int ix_top_line = 0;
+    int window_height;
+    int line_length;
+
+    void parse_anchor(std::ifstream & input);
 };
 
 inline void Buffer::move_to_next_page()
