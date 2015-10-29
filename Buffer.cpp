@@ -35,14 +35,18 @@ bool Buffer::open(const string & new_file_name)
     {
        if(word == "<a")
        {
-           parseAnchor(file);
+           parse_anchor(file);
 
        }
        else
        {
             add(word);
        }
+       if(file.peek() == '\n')
+           break_paragraph();
+
        file >> word;
+
     }
 
     file_name = new_file_name;
@@ -50,14 +54,4 @@ bool Buffer::open(const string & new_file_name)
     return true;
 }
 
-void Buffer::parseAnchor(std::ifstream & input)
-{
-    std::string text;
-    std::string file;
 
-    input >> file;
-    input >> text;
-    text = text.substr(0, text.size() - 1);
-
-    add(file, text);
-}

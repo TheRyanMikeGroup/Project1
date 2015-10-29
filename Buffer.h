@@ -22,11 +22,11 @@ public:
     void add(const std::string & word);
     void add(const std::string & file, const std::string & text);
     bool open(const int &index);
-
+    void break_paragraph();
 
 
 private:
-    void parseAnchor(std::ifstream & input);
+    void parse_anchor(std::ifstream & input);
     std::vector<std::string> v_lines;
     int ix_top_line = 0;
     std::string file_name;
@@ -80,4 +80,22 @@ inline bool Buffer::open(const int & index)
         return open(link_files[index]);
     else
         return false;
+}
+
+inline void Buffer::parse_anchor(std::ifstream & input)
+{
+    std::string text;
+    std::string file;
+
+    input >> file;
+    input >> text;
+    text = text.substr(0, text.size() - 1);
+
+    add(file, text);
+}
+
+inline void Buffer::break_paragraph()
+{
+    v_lines.push_back("");
+    v_lines.push_back("");
 }
