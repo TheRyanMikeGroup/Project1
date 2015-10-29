@@ -8,6 +8,8 @@ using std::cout;
 using std::endl;
 #include <string>
 using std::string;
+#include <sstream>
+using std::stringstream;
 
 void FileViewer::display()
 {
@@ -66,7 +68,7 @@ void FileViewer::run()
                 string file_name;
                 getline(cin, file_name);
                 if (!buffer.open(file_name))
-                    error_message = "Could not open " + file_name;
+                    error_message = string("Could not open " + file_name);
                 break;
             }
 
@@ -82,10 +84,18 @@ void FileViewer::run()
 
             case 'g': {
                 cout << "link number: ";
-                int link_num = 999;
+                int link_num = -1;
                 cin >> link_num;
-                if(!buffer.open(buffer.link_files[link_num]))
-                   error_message = "Could not open " + buffer.link_files[link_num];
+                if(!buffer.open(link_num))
+                {
+                     error_message = string("Could not open link number: ");
+                     stringstream ss;
+                     ss << link_num;
+                     string num;
+                     ss >> num;
+                     error_message += num;
+                }
+
                 break;
             }
         };

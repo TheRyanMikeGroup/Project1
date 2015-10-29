@@ -19,6 +19,7 @@ public:
     void set_line_length(int l) { line_length = l; }
     void add(const std::string & word);
     void add(const std::string & file, const std::string & text);
+    bool open(const int &index);
 
 
 
@@ -61,4 +62,12 @@ inline void Buffer::add(const std::string & file, const std::string & text)
     print_text += 2;
     print_text += "]";
     add(print_text);
+}
+
+inline bool Buffer::open(const int & index)
+{
+    if(index < link_files.size())
+        return open(link_files[index]);
+    else
+        return false;
 }
