@@ -18,7 +18,7 @@ using std::stringstream;
 
 void FileViewer::display()
 {
-    const string long_separator(50, '-');
+    const string long_separator(buffer.get_line_length() + 7, '-');
     const string short_separator(8, '-');
 
     if (!error_message.empty()) {

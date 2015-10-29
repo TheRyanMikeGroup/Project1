@@ -26,7 +26,7 @@ public:
     bool open(const std::string & file_name);
     bool open(const int &index);
 
-
+    int get_line_length() const { return line_length; }
 
 private:
     std::vector<std::string> v_lines;
