@@ -3,12 +3,17 @@
 #include "FileViewer.h"
 
 #include <iostream>
+
 using std::cin;
 using std::cout;
 using std::endl;
+
 #include <string>
+
 using std::string;
+
 #include <sstream>
+
 using std::stringstream;
 
 void FileViewer::display()
