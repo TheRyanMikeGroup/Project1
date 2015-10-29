@@ -5,6 +5,8 @@
 #include <fstream>
 #include <istream>
 #include <iostream>
+#include <sstream>
+
 #include "Anchor.h"
 
 class Buffer
@@ -57,9 +59,17 @@ inline void Buffer::add(const std::string & word)
 
 inline void Buffer::add(const std::string & file, const std::string & text)
 {
+    link_files.push_back(file);
+
     std::string print_text = "<<" + text + ">>";
     print_text += "[";
-    print_text += 2;
+
+    std::stringstream ss;
+    std::string num;
+    ss << link_files.size() - 1;
+    ss >> num;
+    print_text += num;
+
     print_text += "]";
     add(print_text);
 }
