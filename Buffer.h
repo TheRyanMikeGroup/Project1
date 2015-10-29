@@ -51,8 +51,10 @@ inline void Buffer::add(const std::string & word)
 {
     if(v_lines.size() == 0 || v_lines[v_lines.size()-1].size() + word.size()  + 1 > line_length)
         v_lines.push_back(word);
-    else
+    else if(v_lines.back().size() > 0)
         v_lines[v_lines.size() - 1] += " " + word;
+    else
+        v_lines[v_lines.size() - 1] += word;
 
 
 }
