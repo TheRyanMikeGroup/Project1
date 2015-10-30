@@ -23,16 +23,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Anchor.cpp" />
-		<Unit filename="Anchor.h" />
 		<Unit filename="Buffer.cpp" />
 		<Unit filename="Buffer.h" />
 		<Unit filename="FileViewer.cpp" />
 		<Unit filename="FileViewer.h" />
-		<Unit filename="TestWithAnchors.c">
-			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="test.cpp" />
 		<Extensions>
 			<code_completion />
