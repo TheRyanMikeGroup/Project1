@@ -45,34 +45,40 @@
 1392677212 source:c:\users\alexis\documents\cs142\cours\fileviewer\test.cpp
 	"FileViewer.h"
 
-1444792992 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.cpp
+1446086142 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.cpp
 	"Buffer.h"
 	<fstream>
 	<iomanip>
 	<iostream>
 	<string>
 
-1444792992 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.h
+1446086311 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\buffer.h
 	<vector>
 	<string>
+	<fstream>
+	<istream>
+	<iostream>
+	<sstream>
+	"Anchor.h"
 
-1445021212 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\fileviewer.cpp
+1446086375 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\fileviewer.cpp
 	"FileViewer.h"
 	<iostream>
 	<string>
+	<sstream>
 
 1445020804 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\fileviewer.h
 	<string>
 	"Buffer.h"
 
-1445457018 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\test.cpp
+1445915967 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\test.cpp
 	"FileViewer.h"
 
-1445456954 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\anchor.cpp
+1445912403 source:c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\anchor.cpp
 	"Anchor.h"
 	<iostream>
 
-1445898703 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\anchor.h
+1445915917 c:\users\ryan\documents\clarkson\freshman\cs142\workspace\project1\anchor.h
 	<string>
 	<istream>
 	<ostream>

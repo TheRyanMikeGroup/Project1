@@ -3,15 +3,22 @@
 #include "FileViewer.h"
 
 #include <iostream>
+
 using std::cin;
 using std::cout;
 using std::endl;
+
 #include <string>
+
 using std::string;
+
+#include <sstream>
+
+using std::stringstream;
 
 void FileViewer::display()
 {
-    const string long_separator(50, '-');
+    const string long_separator(buffer.get_line_length() + 7, '-');
     const string short_separator(8, '-');
 
     if (!error_message.empty()) {
@@ -28,7 +35,7 @@ void FileViewer::display()
     cout << long_separator << endl;
     buffer.display();
     cout << long_separator << endl;
-    cout << "  next  previous  open  quit\n";
+    cout << " go next  previous  open  quit\n";
     cout << short_separator << endl;
 }
 
@@ -44,6 +51,7 @@ void FileViewer::run()
     cout << '\n';
 
     buffer.set_window_height(window_height);
+    buffer.set_line_length(line_length);
 
     bool done = false;
     while (!done) {
@@ -65,7 +73,7 @@ void FileViewer::run()
                 string file_name;
                 getline(cin, file_name);
                 if (!buffer.open(file_name))
-                    error_message = "Could not open " + file_name;
+                    error_message = string("Could not open " + file_name);
                 break;
             }
 
@@ -81,10 +89,18 @@ void FileViewer::run()
 
             case 'g': {
                 cout << "link number: ";
-                int link_num = 999;
+                int link_num = -1;
                 cin >> link_num;
-                if(!buffer.open(buffer.link_files[link_num]))
-                   error_message = "Could not open " + buffer.link_files[link_num];
+                if(!buffer.open(link_num))
+                {
+                     error_message = string("Could not open link number: ");
+                     stringstream ss;
+                     ss << link_num;
+                     string num;
+                     ss >> num;
+                     error_message += num;
+                }
+
                 break;
             }
         };

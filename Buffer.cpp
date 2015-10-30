@@ -5,9 +5,13 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+
 using std::cout;
+
 #include <string>
+
 using std::string;
+
 
 void Buffer::display() const
 {
@@ -28,10 +32,29 @@ bool Buffer::open(const string & new_file_name)
     // Note: the vector is cleared only after we know the file
     // opened successfully.
 
-    string line;
-    while (getline(file, line)) v_lines.push_back(line);
+    string word;
+    file >> word;
+    while (!file.eof())
+    {
+       if(word == "<a")
+       {
+           parse_anchor(file);
+
+       }
+       else
+       {
+            add(word);
+       }
+       if(file.peek() == '\n')
+           break_paragraph();
+
+       file >> word;
+
+    }
 
     file_name = new_file_name;
     ix_top_line = 0;
     return true;
 }
+
+
